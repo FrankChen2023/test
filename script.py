@@ -294,7 +294,7 @@ while len(files) > 1:
 
         # If it is not a new category. category_re = 0.
         for category in list_doc:
-            if pdf_name == category['name']:
+            if pdf_name[:-4] == category['name']:
                 category_re = 0
                 break
         
