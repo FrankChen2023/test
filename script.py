@@ -98,8 +98,8 @@ while len(files) > 1:
     # Iterate over each page of the PDF
     for page_num_1, page in enumerate(pages): 
 
-        # More than 30 pages each time will lead to a ban from Transkribus.
-        if page_num_1 == 30:
+        # More than 40 pages each time will lead to a ban from Transkribus.
+        if page_num_1 == 40:
             break
 
         # Page number starts from 1.

@@ -5,7 +5,7 @@ Before you make any difference to the repo, please check STEP and CAUTION below!
 # STEP
 
 ## If you are adding/uploading some files onto the site on github, please follow the step below.  
-1. Check your file, and it should be PDF type and at most 30 pages. The category and created data will be named according to the name of PDF.  
+1. Check your file, and it should be PDF type and at most 40 pages. The category and created data will be named according to the name of PDF.  
 2. Find the script.py in the base path of the repo, and check the content from line-14 to line-36.  
 3. Follw the comments, if the values are not correct, please adjust them manually.  
 4. Fine and open the 'Source' dirctory in the  base path of the repo, and upload your file into the dirctory.  
@@ -22,7 +22,7 @@ Before you make any difference to the repo, please check STEP and CAUTION below!
 # CAUTION
 ## Before you make difference, please check cautions below if you are not familiar with them.
 1. Only PDF file can be accepted.  
-2. To make the system work well, only 30 pages can be processed within 24 hours. If your file includes more than 30 pages, only the first 30 pages will be processed. If there are multiple PDFs are uploaded together, the total pages can not exceed 30.   
+2. To make the system work well, only 40 pages can be processed within 24 hours. If your file includes more than 40 pages, only the first 40 pages will be processed. If there are multiple PDFs are uploaded together, the total pages can not exceed 40.   
 3. Your PDF will be deleted after the process done automatically to keep the source dirctory clear.  
 4. The time of processing is according to how many pages in the PDF, generally 50 seconds for each page.  
 5. Only main branch will call the github actions, so any change in sub-branch won't make difference to the site.  
@@ -39,12 +39,14 @@ Before you make any difference to the repo, please check STEP and CAUTION below!
 2. 'Setting' --> 'Actions' --> 'General' --> 'Workflow permissions'. Switch to 'Read and write permission' from 'Read repository contents and packages permissions'.
 
 # Q&A
+#### Q: I upload a PDF file, but I can not find the result files on the site.
+A: In this case, please go to the '_datasets' dirctory and try to find the result files in it. The created files always name like 'PDFname-1.md'. If you can find some files in the directory and there are some contents in them, it means all things are alright, you can refresh the site page or try to clear your browser cookies and then open the site again. If you can not find any file names as the form, it means the process failed. Please check the step and caution above, and ensure that your input file and operating steps are in rule.
 #### Q: When I upload a file and fail with 'that’s a big file. Try again with a file smaller than 25MB.  
 A: Because github doesn't allow user to upload a file bigger than 25MB directly on github site. You can try to clone the repo to you local repo and move your PDF into the directory 'Source' and push it onto remote repo. If your PDF is larger than 100MB, please use Git LFS (Large File Storage).
 #### Q: The github actions fail, the error is nothing to commit.
 A: This situation always happen when you make changes but not upload file in 'Source' directory. Take it easy, it won't lead to any crash or unexpected.
 #### Q: I upload a PDF file but no content in the result (created files).
-A: It may happen if the system has processed more than 30 pages within 24 hours. When a same IP uses Trancribus frequently in a period, it will always receive a ban (last for 24 hours) from Transcribus. If so, please try your work after the ban, and notice that the existed files in '_dataset' may need to be deleted manually.
+A: It may happen if the system has processed more than 40 pages within 24 hours. When a same IP uses Trancribus frequently in a period, it will always receive a ban (last for 24 hours) from Transcribus. If so, please try your work after the ban, and notice that the existed files in '_dataset' may need to be deleted manually.
 #### Q: I change the file name in the datasets, but it doesn't work on the site.
 A: Please check whether you keep the title value same as the file name after you change. The name on the site is according to the title value, which is part of the content of files in datasets. You can find the line very easily in the '_datasets' --> open the file you change and edit it. We strongly suggest you to change the title value whenever you change the dataset filename.
 # Any other IT question:
