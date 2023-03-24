@@ -164,6 +164,17 @@ while len(files) > 1:
                 # Define the text file name.
                 text_name = pdf_name[:-4] + "-" + str(session) + '.txt'
 
+                # Change text file into md file and move it into _datasets foleder.
+                mdfile = text_name[:-4] + '.md'
+                
+                # If md_name is in the datasets, session should change.
+                while 1:
+                    if mdfile in datasets:
+                        mdfile = pdf_name[:-4] + "-" + str(session) + '.md'
+                        session += 1
+                    else:
+                        break
+
                 # Create a new session file and Write the general beginning content into text file.
                 with open (text_name, 'w', encoding='utf-8') as file:
                     file.write('---')
@@ -261,17 +272,6 @@ while len(files) > 1:
 
                 # Start next session.
                 session += 1
-
-                # Change text file into md file and move it into _datasets foleder.
-                mdfile = text_name[:-4] + '.md'
-                
-                # If md_name is in the datasets, session should change.
-                while 1:
-                    if mdfile in datasets:
-                        mdfile = pdf_name[:-4] + "-" + str(session) + '.md'
-                        session += 1
-                    else:
-                        break
 
                 shutil.copyfile(text_name, mdfile)
                 os.remove(text_name)

@@ -11,7 +11,7 @@ Before you make any difference to the repo, please check STEP and CAUTION below!
 4. Fine and open the 'Source' dirctory in the  base path of the repo, and upload your file into the dirctory.  
 5. Wait for a while and everything will be done automatically.  
 6. You can check the github actions (click 'actions' above the repo and below the repo name). Please do not make any change before all actions finish.  
-7. After all actions are done, you can check the created data files in '_datasets', and all created data files will name like 'PDFName-1.md', you can change it directly as you like, but please don't change the file type.  
+7. After all actions are done, you can check the created data files in '_datasets', and all created data files will name like 'PDFName-1.md', you can change it directly as you like, and you'd better change the title name as well when you change the file name, but please don't change the file type.  
 
 ## If you are adding/uploading some files onto the site on local device, please follow the step below. 
 1-3. Same as the step 1 above.  
@@ -45,6 +45,8 @@ A: Because github doesn't allow user to upload a file bigger than 25MB directly 
 A: This situation always happen when you make changes but not upload file in 'Source' directory. Take it easy, it won't lead to any crash or unexpected.
 #### Q: I upload a PDF file but no content in the result (created files).
 A: It may happen if the system has processed more than 30 pages within 24 hours. When a same IP uses Trancribus frequently in a period, it will always receive a ban (last for 24 hours) from Transcribus. If so, please try your work after the ban, and notice that the existed files in '_dataset' may need to be deleted manually.
+#### Q: I change the file name in the datasets, but it doesn't work on the site.
+A: Please check whether you keep the title value same as the file name after you change. The name on the site is according to the title value, which is part of the content of files in datasets. You can find the line very easily in the '_datasets' --> open the file you change and edit it. We strongly suggest you to change the title value whenever you change the dataset filename.
 # Any other IT question:
 #### Please contact team Charlie
 #### Frank Chen (z.chen5.21@abdn.ac.uk / frankchen2202@163.com)
