@@ -93,7 +93,7 @@ while len(files) > 1:
     pages = fitz.open(pdf_path)
 
     # Record the last page number.
-    final = len(pages)
+    final_page = len(pages) - 1
     
     # Iterate over each page of the PDF
     for page_num_1, page in enumerate(pages): 
@@ -202,7 +202,7 @@ while len(files) > 1:
 
                     # Then the beginning page with the content finishes.
                     # when the page is not the final page.
-                if page_num != final:
+                if page_num_1 != final_page:
                     break
             
             # If new_page equals 'continue', it means the content should follow the existed text.
@@ -221,16 +221,16 @@ while len(files) > 1:
                 file.close()
 
                 # Then the content finishes when the page is not the final page.
-                if page_num != final:
+                if page_num_1 != final_page:
                     break
                 
 
             # If new_page equals 'continue' and new_page_symbol is in the content.
             # It means one file ends and it should be closed.
-            if page_num == final or (new_page == 'continue' and new_page_symbol_1 in content and new_page_symbol_2 in content):
+            if page_num_1 == final_page or (new_page == 'continue' and new_page_symbol_1 in content and new_page_symbol_2 in content):
                 
                 # If this is the final page, add one to ensure the last page will be in the resources.
-                if page_num == final:
+                if page_num_1 == final_page:
                     page_num += 1
 
                 with open (text_name, 'a', encoding='utf-8') as file:
@@ -272,16 +272,13 @@ while len(files) > 1:
                 # Change the statement from 'continue' to 'beginning'
                 new_page = 'beginning'
 
-                # Start next session.
-                session += 1
-
                 shutil.copyfile(text_name, mdfile)
                 os.remove(text_name)
                 shutil.move(mdfile, '_datasets/' + mdfile)
 
                 # However, this page has not been stored if it not the final page.
                 # Notice that page_num has been added 1 if it is the final page.
-                if page_num == final+1:
+                if page_num_1 == final_page:
                     break
                 else:
                     continue
