@@ -257,8 +257,8 @@ while len(files) > 1:
                 # If md_name is in the datasets, session should change.
                 while 1:
                     if mdfile in datasets:
-                        session += 1
                         mdfile = pdf_name[:-4] + "-" + str(session) + '.md'
+                        session += 1
                     else:
                         break
 
