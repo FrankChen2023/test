@@ -59,9 +59,6 @@ new_page = 'beginning'
 # Define the session number of the PDF
 session = 1
 
-# Start page number in resources.
-start = 1
-
 # When there is another file except keeper, it runs.
 while len(files) > 1:
     for file in files:
@@ -161,6 +158,9 @@ while len(files) > 1:
             # If new_page equals 'beginning', it means this is a beginning of a new page.
             if new_page == 'beginning':
 
+                # Start page number in resources.
+                start_page = page_num
+
                 # Define the text file name.
                 text_name = pdf_name[:-4] + "-" + str(session) + '.txt'
 
@@ -231,7 +231,7 @@ while len(files) > 1:
                     file.write('\n')
 
                     # For loop to fill the resources. From start page number to current page number.
-                    for num in range(start, page_num):
+                    for num in range(start_page, page_num):
                         file.write('- format: png ')
                         file.write('\n')
                         file.write('  name: Page[' + str(num) + '].png ')
@@ -261,7 +261,6 @@ while len(files) > 1:
 
                 # Start next session.
                 session += 1
-                start = page_num + 1
 
                 # Change text file into md file and move it into _datasets foleder.
                 mdfile = text_name[:-4] + '.md'
