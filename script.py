@@ -259,6 +259,8 @@ while len(files) > 1:
                     if mdfile in datasets:
                         session += 1
                         mdfile = pdf_name[:-4] + "-" + str(session) + '.md'
+                    else:
+                        break
 
                 shutil.copyfile(text_name, mdfile)
                 os.remove(text_name)
