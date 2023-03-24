@@ -77,9 +77,6 @@ while len(files) > 1:
     # Load the list of datasets
     datasets = os.listdir("_datasets")
 
-    # Load the list of data_img
-    data_img = os.listdir(output_dir)
-
     try:
 
         # Build the dirctory to save the images
@@ -87,6 +84,10 @@ while len(files) > 1:
 
     except:
         pass
+
+    
+    # Load the list of data_img
+    data_img = os.listdir(output_dir)
 
     # Open the PDF using PyMuPDF
     pages = fitz.open(pdf_path)
