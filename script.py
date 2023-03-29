@@ -171,9 +171,9 @@ while len(files) > 1:
                 # If md_name is in the datasets, session should change.
                 while 1:
                     if mdfile in datasets:
+                        session += 1
                         text_name = pdf_name[:-4] + "-" + str(session) + '.txt'
                         mdfile = text_name[:-4] + '.md'
-                        session += 1
                     else:
                         break
 
@@ -272,9 +272,13 @@ while len(files) > 1:
                 # Change the statement from 'continue' to 'beginning'
                 new_page = 'beginning'
 
+                # Change the file type from txt to md and move it into datasets.
                 shutil.copyfile(text_name, mdfile)
                 os.remove(text_name)
                 shutil.move(mdfile, '_datasets/' + mdfile)
+
+                # Session increase.
+                session += 1
 
                 # However, this page has not been stored if it not the final page.
                 # Notice that page_num has been added 1 if it is the final page.
