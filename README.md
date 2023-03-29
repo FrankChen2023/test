@@ -47,7 +47,7 @@ How do I test the code to ensure the build is correct?
 ## Running the application
  The application will rerun it automatically powered by github actions.
   
-## Team Members
+## Team Members 
  
  Chen Zhaoqi
 
