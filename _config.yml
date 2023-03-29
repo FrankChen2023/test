@@ -24,8 +24,8 @@ navigation:
     url: /guide/
   - title: About us
     url: /about-us/
-  - title: Helps
-    url: /helps/
+  - title: Help
+    url: /help/
 
 # Collections
 collections:
