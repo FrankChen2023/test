@@ -264,6 +264,7 @@ def datasetGenerator(contents, new_page_symbol_1, new_page_symbol_2):
                 break
             else:
                 continue
-
+            
+    return None
 
     
