@@ -1,4 +1,3 @@
-from mdutils.mdutils import MdUtils
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager, ChromeType
 from selenium.webdriver.chrome.options import Options
@@ -9,7 +8,6 @@ import os
 import fitz
 import yaml
 import time
-import os
 
 ###############################################################################
 # -----------------------------------------------------------------------------
