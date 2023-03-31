@@ -13,9 +13,15 @@ import time
 # -----------------------------------------------------------------------------
 # This part should be filled flexibly by user.
 
-# It means the beginning of page number in a file.
-# If you set it equal to 99 so that both the first page number and the first paragraph number will be 99.
+# It means where the task start.
+# If you set it equal to 41 so that the first 40 pages will be skipped.
 first_page = 1
+
+# Model of system.
+# If the model is 'Auto', it means you don't need to change the first_page value above. 
+# The system will skip all pages existed. It always used to continue work.
+# If the model is 'Manual', it means the system will absolutely start from the first_page.
+model = 'Auto' # or 'Manual'
 
 # The keywords symboling a new page.
 # When both keywords show in one page, and then it will finish last page and start one new file.
@@ -92,28 +98,43 @@ while len(files) > 1:
 
     # Record the last page number.
     final_page = len(pages) - 1
+
+    # Record the number of task.
+    task = 0
     
     # Iterate over each page of the PDF
-    for page_num_1, page in enumerate(pages): 
-
-        # More than 40 pages each time will lead to a ban from Transkribus.
-        if page_num_1 == 40:
-            break
+    for page_num_1, page in enumerate(pages):
 
         # Page number starts from 1.
-        page_num = page_num_1 + first_page
+        page_num = page_num_1 + 1
 
         # Every page's name
         filename = "Page[" + str(page_num) + "].png"
 
+        # Start from first page.
+        if model == 'Manual':
+            if page_num < first_page:
+                continue
+
         # If the filename exists in the data_img dirctory, page_num should change.
+        if model == 'Auto':
+            if filename in data_img:
+                continue
+        
+        # Avoid same name.
         while 1:
             if filename in data_img:
-                first_page += 1
-                page_num = page_num_1 + first_page
+                page_num += 1
                 filename = "Page[" + str(page_num) + "].png"
             else:
                 break
+
+        # Task starts.
+        task += 1
+        
+        # More than 40 pages each time will lead to a ban from Transkribus.
+        if task > 40:
+            break
 
         # Render the page as a PNG image
         pic = page.get_pixmap(alpha=False)
