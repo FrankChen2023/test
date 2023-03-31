@@ -69,7 +69,7 @@ Before you make any difference to the repo, please check STEP and CAUTION below!
 
 ## If you are adding/uploading some files onto the site on github, please follow the step below.  
 1. Check your file, and it should be PDF type and at most 40 pages. The category and created data will be named according to the name of PDF.  
-2. Find the script.py in the base path of the repo, and check the content from line-12 to line-34.  
+2. Find the script.py in the base path of the repo, and check the content from line-12 to line-40.  
 3. Follw the comments, if the values are not correct, please adjust them manually.  
 4. Fine and open the 'Source' dirctory in the  base path of the repo, and upload your file into the dirctory.  
 5. Wait for a while and everything will be done automatically.  
