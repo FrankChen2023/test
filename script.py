@@ -15,13 +15,13 @@ import time
 
 # It means where the task start.
 # If you set it equal to 41 so that the first 40 pages will be skipped.
-first_page = 1
+first_page = 2
 
 # Model of system.
 # If the model is 'Auto', it means you don't need to change the first_page value above. 
 # The system will skip all pages existed. It always used to continue work.
 # If the model is 'Manual', it means the system will absolutely start from the first_page.
-model = 'Auto' # or 'Manual'
+model = 'Manual' # or 'Manual'
 
 # The keywords symboling a new page.
 # When both keywords show in one page, and then it will finish last page and start one new file.
