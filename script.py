@@ -89,10 +89,6 @@ while len(files) > 1:
     except:
         pass
 
-    
-    # Load the list of data_img
-    data_img = os.listdir(output_dir)
-
     # Open the PDF using PyMuPDF
     pages = fitz.open(pdf_path)
 
@@ -110,6 +106,9 @@ while len(files) > 1:
 
         # Every page's name
         filename = "Page[" + str(page_num) + "].png"
+
+        # Load the list of data_img
+        data_img = os.listdir(output_dir)
 
         # Start from first page.
         if model == 'Manual':
