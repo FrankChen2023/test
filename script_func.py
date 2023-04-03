@@ -105,10 +105,11 @@ def openChrome(URL):
         driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
         # Reach to the Transkribus site
+
         driver.get(URL)
 
         # Print the title
-        URLTitle = driver.find_element(By.CLASS_NAME, 'title')
+        URLTitle = driver.title
 
         # Close the site
         driver.quit()
