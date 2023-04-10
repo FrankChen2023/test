@@ -21,7 +21,7 @@ first_page = 1
 # If the model is 'Auto', it means you don't need to change the first_page value above. 
 # The system will skip all pages existed. It always used to continue work.
 # If the model is 'Manual', it means the system will absolutely start from the first_page.
-model = 'Auto' # or 'Manual'
+model = 'Manual' # or 'Manual'
 
 # The keywords symboling a new page.
 # When both keywords show in one page, and then it will finish last page and start one new file.
@@ -69,7 +69,7 @@ while len(files) > 1:
         if file == 'keeper':
             continue
         else:
-            pdf_name = file 
+            pdf_name = file
             break
     
     # Define the path to the PDF file
@@ -131,6 +131,7 @@ while len(files) > 1:
         # Task starts.
         task += 1
         
+
         # More than 40 pages each time will lead to a ban from Transkribus.
         if task > 40:
             break
