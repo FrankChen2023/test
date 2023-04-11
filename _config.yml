@@ -1,14 +1,14 @@
 title: UoA
 greeting: Minutes of the Confederate Diet (1816-1866)
 description: An open source website for Fraktur minutes.
-baseurl: /jkan
+baseurl: /test
 logo: /img/UoA.png
 
 # Site theme
 jkan_theme: Default
 
 # Authentication
-github_client_id: 9d9f84dafcad011a2446
+github_client_id: 50610d74fd9baae54970
 gatekeeper_host: 
 
 # Dataset schema
