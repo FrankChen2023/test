@@ -21,7 +21,7 @@ first_page = 2
 # If the model is 'Auto', it means you don't need to change the first_page value above. 
 # The system will skip all pages existed. It always used to continue work.
 # If the model is 'Manual', it means the system will absolutely start from the first_page.
-model = 'Manual' # or 'Manual'
+model = 'Auto' # or 'Manual'
 
 # The keywords symboling a new page.
 # When both keywords show in one page, and then it will finish last page and start one new file.
